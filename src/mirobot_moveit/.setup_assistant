@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: mirobot_description
+    relative_path: urdf/mi_robot_arm.urdf
+  srdf:
+    relative_path: config/mi_robot_arm.srdf
+  package_settings:
+    author_name: shifei
+    author_email: 1009760855@qq.com
+    generated_timestamp: 1742006529
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

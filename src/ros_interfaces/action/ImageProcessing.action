@@ -1,0 +1,9 @@
+# 请求
+sensor_msgs/Image image
+---
+# 结果
+sensor_msgs/Image processed_image
+---
+# 反馈部分
+# 这里定义了一个反馈消息，包含一个字符串类型的反馈信息
+string feedback_msg

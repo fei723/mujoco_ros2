@@ -1,0 +1,255 @@
+<mujoco model="rm_75_6f_description">
+  
+  <extension>
+    <plugin plugin="MujocoRosUtils::ClockPublisher"/>
+    <plugin plugin="MujocoRosUtils::PosePublisher"/>
+    <plugin plugin="MujocoRosUtils::ImagePublisher"/>
+    <plugin plugin="MujocoRosUtils::ActuatorCommand"/>
+    <plugin plugin="MujocoRosUtils::ExternalForce"/>
+    <plugin plugin="MujocoRosUtils::SensorPublisher"/>
+  </extension>
+  
+  <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81" />
+
+  <compiler angle="radian" meshdir="mesh" eulerseq="zyx" autolimits="true" />
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.01" />
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+    <motor ctrllimited="true" />
+    <equality solref="0.001 2" />
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0" />
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="rm_description/meshes/RM75_6F/base_link.STL" />
+    <mesh name="Link1" file="rm_description/meshes/RM75_6F/Link1.STL" />
+    <mesh name="Link2" file="rm_description/meshes/RM75_6F/Link2.STL" />
+    <mesh name="Link3" file="rm_description/meshes/RM75_6F/Link3.STL" />
+    <mesh name="Link4" file="rm_description/meshes/RM75_6F/Link4.STL" />
+    <mesh name="Link5" file="rm_description/meshes/RM75_6F/Link5.STL" />
+    <mesh name="Link6" file="rm_description/meshes/RM75_6F/Link6.STL" />
+    <mesh name="Link7" file="rm_description/meshes/RM75_6F/Link7.STL" />
+    <mesh name="DH_hand" file="DH_claw_v2/meshes/DH_hand.STL" />
+    <mesh name="DH_leftfinger" file="DH_claw_v2/meshes/DH_leftfinger.STL" />
+    <mesh name="DH_rightfinger" file="DH_claw_v2/meshes/DH_rightfinger.STL" />
+    <mesh name="cup" file="cup_scaled.obj" />
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".0 .0 .0" rgb2=".8 .8 .8" width="100" height="100" />
+    <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+  </asset>
+  <visual>
+    <headlight ambient="0.7 0.7 0.7" diffuse="0.2 0.2 0.2" specular="0.1 0.1 0.1"/>
+    <map znear="0.01"/>
+    <scale contactwidth="0.02" contactheight="0.5"/>
+    <rgba rangefinder="1 1 0.1 0.1"/>
+  </visual>
+
+  <worldbody>
+    <plugin plugin="MujocoRosUtils::ClockPublisher">
+      <config key="topic_name" value="/clock"/>
+      <config key="publish_rate" value="100"/>
+      <config key="use_sim_time" value="true"/>
+    </plugin>
+
+    <site name="x_axis" pos="1 0 0" rgba="1 0 0 1" size="0.02" />
+    <site name="y_axis" pos="0 1 0" rgba="0 1 0 1" size="0.02" />
+    <site name="z_axis" pos="0 0 1" rgba="0 0 1 1" size="0.02" />
+    <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
+    <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
+    <geom name="ground" type="plane" pos="0 0 0" size="100 100 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
+    <camera name="fixed" pos="0 -3.0 0.5201624661965566" xyaxes="1 0 0 0 0 1" />
+    <camera name="track" mode="trackcom" pos="0 -3.0 0.5201624661965566" xyaxes="1 0 0 0 0 1" />
+    <!-- <body name="root" pos="0 0 0.020162466196556553" quat="1 0 0 0"> -->
+    <body name="root" pos="0 0 0" quat="1 0 0 0">
+      <!-- <freejoint name="root" /> -->
+      <!-- <geom type="cylinder" size="0.01 0.01" rgba="1 0 0 1" /> -->
+      
+      <site name="imu" size="0.01" pos="0 0 0" />
+      <geom type="mesh" rgba="1 1 1 1" mesh="base_link" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="mesh" rgba="1 1 1 1" mesh="base_link" />
+      <body name="Link1" pos="0 0 0.2406" quat="0.707105 -0.707108 0 0">
+        <inertial pos="-2.1376e-07 0.025186 -0.021108" quat="0.593933 0.804515 0.000192591 -0.000152821" mass="0.59356" diaginertia="0.0012661 0.00124679 0.000496262" />
+        <joint name="joint1" pos="0 0 0" axis="0 -1 0" range="-3.107 3.107" actuatorfrcrange="-100 100" />
+        <geom type="mesh" rgba="1 1 1 1" mesh="Link1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="mesh" rgba="1 1 1 1" mesh="Link1" />
+        <body name="Link2" quat="0.707105 0.707108 0 0">
+          <inertial pos="4.1111e-07 0.011078 0.076129" quat="0.700419 0.0973659 -0.0973528 0.700325" mass="0.43285" diaginertia="0.0013016 0.0012584 0.000238373" />
+          <joint name="joint2" pos="0 0 0" axis="0 1 0" range="-2.269 2.269" actuatorfrcrange="-100 100" />
+          <geom type="mesh" rgba="1 1 1 1" mesh="Link2" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="mesh" rgba="1 1 1 1" mesh="Link2" />
+          <body name="Link3" pos="0 0 0.256" quat="0.707105 -0.707108 0 0">
+            <inertial pos="-4.7932e-07 0.027347 -0.023544" quat="0.593129 0.805107 0.000113245 -7.25395e-05" mass="0.43132" diaginertia="0.00079433 0.000774631 0.000270809" />
+            <joint name="joint3" pos="0 0 0" axis="0 -1 0" range="-3.107 3.107" actuatorfrcrange="-100 100" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="Link3" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="Link3" />
+            <body name="Link4" quat="0.707105 0.707108 0 0">
+              <inertial pos="5.0444e-06 0.010569 0.059593" quat="0.699779 0.0991931 -0.0993915 0.700422" mass="0.28963" diaginertia="0.000656041 0.00063737 0.000114619" />
+              <joint name="joint4" pos="0 0 0" axis="0 1 0" range="-2.356 2.356" actuatorfrcrange="-100 100" />
+              <geom type="mesh" rgba="1 1 1 1" mesh="Link4" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="mesh" rgba="1 1 1 1" mesh="Link4" />
+              <body name="Link5" pos="0 0 0.21" quat="0.707105 -0.707108 0 0">
+                <inertial pos="1.1466e-06 0.021541 -0.018041" quat="0.602601 0.798043 -7.29912e-05 6.38891e-05" mass="0.23941" diaginertia="0.00028594 0.000275321 0.000107299" />
+                <joint name="joint5" pos="0 0 0" axis="0 -1 0" range="-3.107 3.107" actuatorfrcrange="-100 100" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="Link5" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="Link5" />
+                <body name="Link6" quat="0.707105 0.707108 0 0">
+                  <inertial pos="4.5754e-06 0.0073681 0.059382" quat="0.6989 0.105282 -0.10547 0.699522" mass="0.21879" diaginertia="0.000358601 0.00035053 8.07893e-05" />
+                  <joint name="joint6" pos="0 0 0" axis="0 1 0" range="-2.234 2.234" actuatorfrcrange="-100 100" />
+                  <geom type="mesh" rgba="1 1 1 1" mesh="Link6" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                  <geom type="mesh" rgba="1 1 1 1" mesh="Link6" />
+                  <body name="DH_link7" pos="0 0 0.1725">
+                    <inertial pos="0.00010712 0.00124322 0.0132436" quat="0.667401 -0.0139908 0.0118023 0.744474" mass="0.372521" diaginertia="0.000549185 0.000536969 0.000161861" />
+                    <joint name="joint7" pos="0 0 0" axis="0 0 1" range="-6.283 6.283" actuatorfrcrange="-100 100" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="Link7" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="Link7" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="DH_hand" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="DH_hand" />
+                    <body name="DH_leftfinger" pos="0.037878 0.0021423 0.0915">
+                      <inertial pos="-0.0235377 -0.00304958 0.0131359" quat="0.624442 0.23887 0.267777 0.693764" mass="0.0150707" diaginertia="4.59183e-06 3.91454e-06 1.16018e-06" />
+                      <joint name="DH_finger_joint1" pos="0 0 0" axis="1 0 0" type="slide" range="0 0.031" actuatorfrcrange="-10 10" frictionloss="5" />
+                      <!-- <geom size="0.005 0.0125 0.02" pos="-0.002 0 0.0375" type="box" rgba="1 1 1 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" /> -->
+                      <!-- <geom type="box" rgba="1 1 1 1" size="0.005 0.0125 0.02" pos="-0.002 0 0.0375" /> -->
+                      <geom type="mesh" rgba="1 1 1 1" mesh="DH_leftfinger" contype="0" conaffinity="0" density="0" group="1" class="visualgeom" />
+                      <geom type="box" rgba="1 0 0 1" size="0.005 0.0125 0.02" pos="-0.002 0 0.0375" /> 
+                    </body>
+                    <body name="DH_rightfinger" pos="-0.037735 0.0021423 0.0915">
+                      <inertial pos="0.0235377 0.00325958 0.0132559" quat="0.624442 -0.23887 -0.267777 0.693764" mass="0.0150707" diaginertia="4.59183e-06 3.91454e-06 1.16018e-06" />
+                      <joint name="DH_finger_joint2" pos="0 0 0" axis="-1 0 0" type="slide" range="0 0.031" actuatorfrcrange="-10 10" frictionloss="5" />
+                      <!-- <geom size="0.005 0.0125 0.02" pos="0.002 0 0.0375" type="box" rgba="1 1 1 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                      <geom type="box" rgba="1 1 1 1" size="0.005 0.0125 0.02" pos="0.002 0 0.0375" /> -->
+                      <geom type="mesh" rgba="1 1 1 1" mesh="DH_rightfinger" contype="0" conaffinity="0" density="0" group="1" class="visualgeom" />
+                      <geom type="box" rgba="1 0 0 1" size="0.005 0.0125 0.02" pos="0.002 0 0.0375" /> 
+                    </body>
+                    <body name="DH_end_center" pos="0 0 0.145">
+                      <inertial pos="0.0235377 0.00325958 0.0132559" quat="0.624442 -0.23887 -0.267777 0.693764" mass="0.0150707" diaginertia="4.59183e-06 3.91454e-06 1.16018e-06" />
+                      <geom type="box" rgba="0 1 0 1" size="0.01 0.01 0.01" pos="0 0 0" contype="0" conaffinity="0"/> 
+                      <site name="end_site" pos="0 0 0"/>
+                    </body>
+
+                    <body name="camera" pos="0 1.0 1.0" euler="-30 0 180">
+                      <joint name="camera_pan" axis="0 1 0" range="-90 90" damping="0.5" armature="0.1"/>
+                      <joint name="camera_tilt" axis="1 0 0" range="-90 90" damping="0.5" armature="0.1"/>
+                      <camera name="camera" fovy="58"/>
+                      <body name="camera_frame" euler="180 0 0"/>
+                      <body name="camera_marker" pos="0 0 0.05">
+                        <geom type="box" size="0.08 0.05 0.03" mass="1.0" rgba="0.5 0.5 1.0 1.0"/>
+                        <geom type="box" size="0.01 0.01 0.01" mass="0.0" rgba="0.5 0.5 1.0 1.0" pos="0.04 0.055 0"/>
+                        <geom type="cylinder" size="0.03 0.01" mass="0.0" rgba="0.5 0.5 1.0 1.0" pos="0 0 -0.04"/>
+                      </body>
+                    </body>
+
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body mocap="true" name="mocap" pos="0.08229997 0.10921554 1.871059">
+        <!-- <geom conaffinity="0" contype="0" pos="0 0 0" rgba="0 0.5 0 0.7" size="0.005 0.005 0.005" type="box"></geom>
+        <geom conaffinity="0" contype="0" pos="1 0 0" rgba="1 0 0 0.1" size="1 0.005 0.005" type="box"></geom>
+        <geom conaffinity="0" contype="0" pos="0 1 0" rgba="0 1 0 0.1" size="0.005 1 0.001" type="box"></geom>
+        <geom conaffinity="0" contype="0" pos="0 0 1" rgba="0 0 1 0.1" size="0.005 0.005 1" type="box"></geom> -->
+    </body>
+
+    <body name="cup" pos="0.3 0.3 0.1">
+        <joint name="cup_joint" type="free" frictionloss="0.01" />
+        <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+        <!-- <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0" size="0.02 0.02 0.02" type="box" name="red_box" rgba="1 0 0 1" /> -->
+        <geom type="mesh" mesh="cup" rgba="1 1 0 1"/>
+    </body>
+
+    <body name="box" pos="0.4 0 0.04">
+        <joint name="red_box_joint" type="free" frictionloss="0.01" />
+        <inertial pos="0 0 0" mass="0.02" diaginertia="0.002 0.002 0.002" />
+        <geom type="box" size="0.04 0.04 0.04" rgba="1 0 0 1"/>
+        <site name="box_site" pos="0 0 0"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="joint1" joint="joint1" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="joint2" joint="joint2" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="joint3" joint="joint3" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="joint4" joint="joint4" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="joint5" joint="joint5" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="joint6" joint="joint6" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="joint7" joint="joint7" ctrllimited="true" ctrlrange="-50 50" gear="1" />
+    <motor name="DH_finger_joint1" joint="DH_finger_joint1" ctrllimited="true" ctrlrange="-10 10" gear="1" />
+    <motor name="DH_finger_joint2" joint="DH_finger_joint2" ctrllimited="true" ctrlrange="-10 10" gear="1" />
+    <plugin plugin="MujocoRosUtils::ActuatorCommand" joint="joint1">
+      <config key="actuator_name" value="joint1"/>
+      <config key="topic_name" value="/joint1"/>
+    </plugin>
+  </actuator>
+
+  <sensor>
+    <actuatorpos name="joint1_p" actuator="joint1" />
+    <actuatorvel name="joint1_v" actuator="joint1" />
+    <actuatorfrc name="joint1_f" actuator="joint1" noise="0.001" />
+    <actuatorpos name="joint2_p" actuator="joint2" />
+    <actuatorvel name="joint2_v" actuator="joint2" />
+    <actuatorfrc name="joint2_f" actuator="joint2" noise="0.001" />
+    <actuatorpos name="joint3_p" actuator="joint3" />
+    <actuatorvel name="joint3_v" actuator="joint3" />
+    <actuatorfrc name="joint3_f" actuator="joint3" noise="0.001" />
+    <actuatorpos name="joint4_p" actuator="joint4" />
+    <actuatorvel name="joint4_v" actuator="joint4" />
+    <actuatorfrc name="joint4_f" actuator="joint4" noise="0.001" />
+    <actuatorpos name="joint5_p" actuator="joint5" />
+    <actuatorvel name="joint5_v" actuator="joint5" />
+    <actuatorfrc name="joint5_f" actuator="joint5" noise="0.001" />
+    <actuatorpos name="joint6_p" actuator="joint6" />
+    <actuatorvel name="joint6_v" actuator="joint6" />
+    <actuatorfrc name="joint6_f" actuator="joint6" noise="0.001" />
+    <actuatorpos name="joint7_p" actuator="joint7" />
+    <actuatorvel name="joint7_v" actuator="joint7" />
+    <actuatorfrc name="joint7_f" actuator="joint7" noise="0.001" />
+    <actuatorpos name="DH_finger_joint1_p" actuator="DH_finger_joint1" />
+    <actuatorvel name="DH_finger_joint1_v" actuator="DH_finger_joint1" />
+    <actuatorfrc name="DH_finger_joint1_f" actuator="DH_finger_joint1" noise="0.001" />
+    <actuatorpos name="DH_finger_joint2_p" actuator="DH_finger_joint2" />
+    <actuatorvel name="DH_finger_joint2_v" actuator="DH_finger_joint2" />
+    <actuatorfrc name="DH_finger_joint2_f" actuator="DH_finger_joint2" noise="0.001" />
+    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
+    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+   
+   
+    <!-- 插件定义 -->
+    
+    
+    <plugin name="pose_publisher" plugin="MujocoRosUtils::PosePublisher" objtype="xbody" objname="object">
+      <config key="frame_id" value="map"/>
+      <config key="pose_topic_name" value="/pose"/>
+      <config key="vel_topic_name" value="/vel"/>
+      <config key="publish_rate" value="30"/>
+      <config key="output_tf" value="false"/>
+      <!-- <config key="tf_child_frame_id" value="object"/> -->
+    </plugin>
+
+    <plugin name="tf_publisher" plugin="MujocoRosUtils::PosePublisher" objtype="xbody" objname="camera_frame">
+      <config key="frame_id" value="map"/>
+      <!-- <config key="pose_topic_name" value="/pose"/> -->
+      <!-- <config key="vel_topic_name" value="/vel"/> -->
+      <config key="publish_rate" value="30"/>
+      <config key="output_tf" value="true"/>
+      <config key="tf_child_frame_id" value="camera"/>
+    </plugin>
+
+    <plugin name="image_publisher" plugin="MujocoRosUtils::ImagePublisher" objtype="camera" objname="camera">
+      <config key="frame_id" value="camera"/>
+      <config key="color_topic_name" value="/image/color"/>
+      <config key="depth_topic_name" value="/image/depth"/>
+      <config key="info_topic_name" value="/image/camera_info"/>
+      <config key="height" value="240"/>
+      <config key="width" value="320"/>
+      <config key="publish_rate" value="30"/>
+    </plugin>
+  
+  
+  </sensor>
+</mujoco>

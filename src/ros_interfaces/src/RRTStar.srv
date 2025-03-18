@@ -1,0 +1,6 @@
+geometry_msgs/Pose target_pose
+---
+bool success
+
+# 响应
+float64[3][] path

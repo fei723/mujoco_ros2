@@ -1,0 +1,2710 @@
+<?xml version="1.0" ?>
+<robot name="M92UW">
+  <link name="base_footprint">
+            </link>
+  <joint name="base_footprint_fixed_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0.131" />
+  </joint>
+  <link name="base_link">
+    <visual name="base_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/base_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="base_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/base_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.013367658 0 -0.015095836" />
+      <mass value="74.786285" />
+      <inertia ixx="2.5701579" ixy="0" ixz="-0.015531692" iyy="2.4786102" iyz="0" izz="4.3899894" />
+    </inertial>
+  </link>
+  <link name="lf_wheel_link">
+    <visual name="lf_wheel_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/lf_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="carbon">
+        <color rgba="1 1 1 1" />
+        <texture filename="package://human_description/textures/carbon.png" />
+      </material>
+    </visual>
+    <collision name="lf_wheel_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/lf_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.10966209 0" />
+      <mass value="1.1156517" />
+      <inertia ixx="0.0030579042" ixy="0" ixz="0" iyy="0.0050380481" iyz="0" izz="0.0030579069" />
+    </inertial>
+  </link>
+  <joint name="lf_wheel_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="lf_wheel_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.29 0.12 -0.03" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="lb_wheel_link">
+    <visual name="lb_wheel_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/lb_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="carbon">
+        <color rgba="1 1 1 1" />
+        <texture filename="package://human_description/textures/carbon.png" />
+      </material>
+    </visual>
+    <collision name="lb_wheel_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/lb_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.10966209 0" />
+      <mass value="1.1156517" />
+      <inertia ixx="0.0030579042" ixy="0" ixz="0" iyy="0.0050380481" iyz="0" izz="0.0030579069" />
+    </inertial>
+  </link>
+  <joint name="lb_wheel_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="lb_wheel_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="-0.29 0.12 -0.03" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rf_wheel_link">
+    <visual name="rf_wheel_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/rf_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="carbon">
+        <color rgba="1 1 1 1" />
+        <texture filename="package://human_description/textures/carbon.png" />
+      </material>
+    </visual>
+    <collision name="rf_wheel_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/rf_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 -0.10966209 0" />
+      <mass value="1.1156517" />
+      <inertia ixx="0.0030579042" ixy="0" ixz="0" iyy="0.0050380481" iyz="0" izz="0.0030579069" />
+    </inertial>
+  </link>
+  <joint name="rf_wheel_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="rf_wheel_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.29 -0.12 -0.03" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rb_wheel_link">
+    <visual name="rb_wheel_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/rb_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="carbon">
+        <color rgba="1 1 1 1" />
+        <texture filename="package://human_description/textures/carbon.png" />
+      </material>
+    </visual>
+    <collision name="rb_wheel_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/rb_wheel_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 -0.10966209 0" />
+      <mass value="1.1156517" />
+      <inertia ixx="0.0030579042" ixy="0" ixz="0" iyy="0.0050380481" iyz="0" izz="0.0030579069" />
+    </inertial>
+  </link>
+  <joint name="rb_wheel_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="rb_wheel_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="-0.29 -0.12 -0.03" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="ankle_p_link">
+    <visual name="ankle_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/ankle_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="ankle_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/ankle_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0.00031353654 0.2" />
+      <mass value="5.0014729" />
+      <inertia ixx="0.12742424" ixy="0.0" ixz="0.0" iyy="0.11078527" iyz="0.0" izz="0.040523373" />
+    </inertial>
+  </link>
+  <joint name="ankle_p_joint" type="revolute">
+    <parent link="base_link" />
+    <child link="ankle_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.085 0.0 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="436.0" lower="-1.5707963267948966" upper="0.05235987755982988" velocity="2.51" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.5184364492350666" soft_upper_limit="0.0" />
+    <dynamics damping="3.48" friction="20.65" />
+  </joint>
+  <link name="knee_p_link">
+    <visual name="knee_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/knee_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="knee_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/knee_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.00017250466 -5.7499427e-05 0.091520826" />
+      <mass value="9.9995835" />
+      <inertia ixx="0.17718143" ixy="3.3078853e-07" ixz="0.00019537528" iyy="0.17966307" iyz="6.5114089e-05" izz="0.038209575" />
+    </inertial>
+  </link>
+  <joint name="knee_p_joint" type="revolute">
+    <parent link="ankle_p_link" />
+    <child link="knee_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.4" />
+    <axis xyz="0 1 0" />
+    <limit effort="436.0" lower="-0.05235987755982988" upper="2.7768188399229783" velocity="2.51" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="0.0" soft_upper_limit="2.724458962363148" />
+    <dynamics damping="3.48" friction="20.65" />
+  </joint>
+  <ros2_control name="leg_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="ankle_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="ankle_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="ankle_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="ankle_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="knee_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="knee_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="knee_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="knee_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+  </ros2_control>
+  <link name="waist1_p_link">
+    <visual name="waist1_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/waist1_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="waist1_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/waist1_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0 0.057429778" />
+      <mass value="6.3049221" />
+      <inertia ixx="0.029907033" ixy="0" ixz="0" iyy="0.031745346" iyz="0" izz="0.012330906" />
+    </inertial>
+  </link>
+  <joint name="waist1_p_joint" type="revolute">
+    <parent link="knee_p_link" />
+    <child link="waist1_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.4" />
+    <axis xyz="0 1 0" />
+    <limit effort="207.0" lower="-2.2689280275926285" upper="2.2689280275926285" velocity="3.14" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-2.2165681500327987" soft_upper_limit="2.2165681500327987" />
+    <dynamics damping="3.48" friction="20.65" />
+  </joint>
+  <link name="waist2_y_link">
+    <visual name="waist2_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/waist2_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="waist2_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/waist2_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0 0.17307869" />
+      <mass value="0.70904416" />
+      <inertia ixx="0.0010443308" ixy="0" ixz="0" iyy="0.0010443307" iyz="0" izz="0.002054833" />
+    </inertial>
+  </link>
+  <joint name="waist2_y_joint" type="revolute">
+    <parent link="waist1_p_link" />
+    <child link="waist2_y_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+    <limit effort="207.0" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="3.14" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.5184364492350666" soft_upper_limit="1.5184364492350666" />
+    <dynamics damping="3.48" friction="20.65" />
+  </joint>
+  <link name="trunk_link">
+    <visual name="trunk_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/trunk_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="trunk_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/trunk_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.0085487881 -9.606895e-06 -0.077759044" />
+      <mass value="12.350557" />
+      <inertia ixx="0.35316138" ixy="-1.0848429e-05" ixz="-0.010659045" iyy="0.26640983" iyz="8.9227842e-06" izz="0.20173237" />
+    </inertial>
+  </link>
+  <joint name="trunk_fixed_joint" type="fixed">
+    <parent link="waist2_y_link" />
+    <child link="trunk_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.510000061" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <ros2_control name="waist_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="waist1_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="waist1_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="waist1_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="waist1_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="waist2_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="waist2_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="waist2_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="waist2_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+  </ros2_control>
+  <link name="head1_y_link">
+    <visual name="head1_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/head1_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="head1_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/head1_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+      <mass value="0.9701721487615899" />
+      <inertia ixx="0.002353602425794535" ixy="-1.5047554446877549e-06" ixz="9.720103999911807e-07" iyy="0.0023108930597505323" iyz="-5.8260809010239775e-05" izz="0.0008192659356165283" />
+    </inertial>
+  </link>
+  <joint name="head1_y_joint" type="revolute">
+    <parent link="trunk_link" />
+    <child link="head1_y_link" />
+    <origin rpy="0.0 0.227 0.0" xyz="0.00825076246 0.0 0.187487518331" />
+    <axis xyz="0 0 1" />
+    <limit effort="16.0" lower="-0.7853981633974483" upper="0.7853981633974483" velocity="6.0" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-0.7330382858376184" soft_upper_limit="0.7330382858376184" />
+    <dynamics damping="1.75" friction="1.48" />
+  </joint>
+  <link name="head2_p_link">
+    <visual name="head2_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/head2_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="head2_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/head2_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.023983628 -3.4088057e-05 0.060004983" />
+      <mass value="1.4412722" />
+      <inertia ixx="0.0051107798" ixy="-5.4733507e-05" ixz="0.001174679" iyy="0.0074364813" iyz="3.6514141e-05" izz="0.0066131559" />
+    </inertial>
+  </link>
+  <joint name="head2_p_joint" type="revolute">
+    <parent link="head1_y_link" />
+    <child link="head2_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="15.0" lower="-0.3490658503988659" upper="0.2617993877991494" velocity="8.0" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-0.29670597283903605" soft_upper_limit="0.20943951023931953" />
+    <dynamics damping="1.75" friction="1.48" />
+  </joint>
+  <link name="head_front_left_fishye_color_frame" />
+  <joint name="head_front_left_fishye_color_joint" type="fixed">
+    <parent link="head2_p_link" />
+    <child link="head_front_left_fishye_color_frame" />
+    <origin rpy="0.0 0.034906558 0.0" xyz="0.11560924285 0.03 0.001949777401" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_front_left_fishye_color_optical_frame" />
+  <joint name="head_front_left_fishye_color_optical_joint" type="fixed">
+    <parent link="head_front_left_fishye_color_frame" />
+    <child link="head_front_left_fishye_color_optical_frame" />
+    <origin rpy="-1.5707963267948966 0.0 -1.5707963267948966" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_front_right_fishye_color_frame" />
+  <joint name="head_front_right_fishye_color_joint" type="fixed">
+    <parent link="head2_p_link" />
+    <child link="head_front_right_fishye_color_frame" />
+    <origin rpy="0.0 0.034906558 0.0" xyz="0.11560924285 -0.03 0.001949777401" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_front_right_fishye_color_optical_frame" />
+  <joint name="head_front_right_fishye_color_optical_joint" type="fixed">
+    <parent link="head_front_right_fishye_color_frame" />
+    <child link="head_front_right_fishye_color_optical_frame" />
+    <origin rpy="-1.5707963267948966 0.0 -1.5707963267948966" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_left_fishye_color_frame" />
+  <joint name="head_left_fishye_color_joint" type="fixed">
+    <parent link="head2_p_link" />
+    <child link="head_left_fishye_color_frame" />
+    <origin rpy="-0.22689279888888889 0.0 1.5707963" xyz="8e-05 0.079054996528 0.068" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_left_fishye_color_optical_frame" />
+  <joint name="head_left_fishye_color_optical_joint" type="fixed">
+    <parent link="head_left_fishye_color_frame" />
+    <child link="head_left_fishye_color_optical_frame" />
+    <origin rpy="-1.5707963267948966 0.0 -1.5707963267948966" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_right_fishye_color_frame" />
+  <joint name="head_right_fishye_color_joint" type="fixed">
+    <parent link="head2_p_link" />
+    <child link="head_right_fishye_color_frame" />
+    <origin rpy="0.22689279888888889 0.0 -1.5707963" xyz="8e-05 -0.079054996528 0.068" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_right_fishye_color_optical_frame" />
+  <joint name="head_right_fishye_color_optical_joint" type="fixed">
+    <parent link="head_right_fishye_color_frame" />
+    <child link="head_right_fishye_color_optical_frame" />
+    <origin rpy="-1.5707963267948966 0.0 -1.5707963267948966" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_imu_frame" />
+  <joint name="head_imu_joint" type="fixed">
+    <parent link="head2_p_link" />
+    <child link="head_imu_frame" />
+    <origin rpy="-1.5707963 0.0 -1.5707963" xyz="0.10135 0.030741428 0.045873980003" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="head_realsense_frame" />
+  <joint name="head_realsense_joint" type="fixed">
+    <parent link="head2_p_link" />
+    <child link="head_realsense_frame" />
+    <origin rpy="0.0 0.6108652277777777 0.0" xyz="0.087368495194 0.0 -0.027541394905" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <sensor id="head_imu" name="head_imu" type="imu" update_rate="100.0">
+    <parent link="head_imu_frame" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </sensor>
+  
+  <joint name="head_camera_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="head_realsense_frame" />
+    <child link="head_camera_bottom_screw_frame" />
+  </joint>
+  <link name="head_camera_bottom_screw_frame" />
+  <joint name="head_camera_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.010600000000000002 0.0175 0.0125" />
+    <parent link="head_camera_bottom_screw_frame" />
+    <child link="head_camera_link" />
+  </joint>
+  <link name="head_camera_link">
+    <visual name="head_camera_link_vis">
+      
+      <origin rpy="0 0 0" xyz="0.0043 -0.0175 0" />
+      <geometry>
+        <mesh filename="../meshes/camera/d435.stl" />
+      </geometry>
+      <material name="aluminum">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision name="head_camera_link_col">
+      <origin rpy="0 0 0" xyz="-0.0043 -0.0175 0" />
+      <geometry>
+        <box size="0.02505 0.09 0.025" />
+      </geometry>
+    </collision>
+    <inertial>
+      
+      <mass value="0.072" />
+      <origin rpy="0 0 0" xyz="-0.0043 -0.0175 0" />
+      <inertia ixx="4.41106250E-05" ixy="2.63787168E-07" ixz="2.62460083E-08" iyy="6.59575833E-06" iyz="-3.13712429E-09" izz="4.44598902E-05" />
+    </inertial>
+  </link>
+  
+  <joint name="head_camera_depth_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="head_camera_link" />
+    <child link="head_camera_depth_frame" />
+  </joint>
+  <link name="head_camera_depth_frame" />
+  <joint name="head_camera_depth_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0" />
+    <parent link="head_camera_depth_frame" />
+    <child link="head_camera_depth_optical_frame" />
+  </joint>
+  <link name="head_camera_depth_optical_frame" />
+  
+  <joint name="head_camera_infra1_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.0 0" />
+    <parent link="head_camera_link" />
+    <child link="head_camera_infra1_frame" />
+  </joint>
+  <link name="head_camera_infra1_frame" />
+  <joint name="head_camera_infra1_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0" />
+    <parent link="head_camera_infra1_frame" />
+    <child link="head_camera_infra1_optical_frame" />
+  </joint>
+  <link name="head_camera_infra1_optical_frame" />
+  
+  <joint name="head_camera_infra2_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 -0.05 0" />
+    <parent link="head_camera_link" />
+    <child link="head_camera_infra2_frame" />
+  </joint>
+  <link name="head_camera_infra2_frame" />
+  <joint name="head_camera_infra2_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0" />
+    <parent link="head_camera_infra2_frame" />
+    <child link="head_camera_infra2_optical_frame" />
+  </joint>
+  <link name="head_camera_infra2_optical_frame" />
+  
+  <joint name="head_camera_color_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0.015 0" />
+    <parent link="head_camera_link" />
+    <child link="head_camera_color_frame" />
+  </joint>
+  <link name="head_camera_color_frame" />
+  <joint name="head_camera_color_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0" />
+    <parent link="head_camera_color_frame" />
+    <child link="head_camera_color_optical_frame" />
+  </joint>
+  <link name="head_camera_color_optical_frame" />
+  <link name="head_camera_accel_frame" />
+  <link name="head_camera_accel_optical_frame" />
+  <link name="head_camera_gyro_frame" />
+  <link name="head_camera_gyro_optical_frame" />
+  <joint name="head_camera_accel_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.01174 -0.00552 0.0051" />
+    <parent link="head_camera_link" />
+    <child link="head_camera_accel_frame" />
+  </joint>
+  <joint name="head_camera_accel_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0" />
+    <parent link="head_camera_accel_frame" />
+    <child link="head_camera_accel_optical_frame" />
+  </joint>
+  <joint name="head_camera_gyro_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.01174 -0.00552 0.0051" />
+    <parent link="head_camera_link" />
+    <child link="head_camera_gyro_frame" />
+  </joint>
+  <joint name="head_camera_gyro_optical_joint" type="fixed">
+    <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0" />
+    <parent link="head_camera_gyro_frame" />
+    <child link="head_camera_gyro_optical_frame" />
+  </joint>
+  <ros2_control name="head_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="head1_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="head1_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="head1_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="head1_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="head2_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="head2_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="head2_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="head2_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <sensor name="head_imu">
+      <state_interface name="orientation.x" />
+      <state_interface name="orientation.y" />
+      <state_interface name="orientation.z" />
+      <state_interface name="orientation.w" />
+      <state_interface name="angular_velocity.x" />
+      <state_interface name="angular_velocity.y" />
+      <state_interface name="angular_velocity.z" />
+      <state_interface name="linear_acceleration.x" />
+      <state_interface name="linear_acceleration.y" />
+      <state_interface name="linear_acceleration.z" />
+      <param name="frame_id">head_imu_frame</param>
+      <param name="gyro_sensor">head_imu_gyro</param>
+      <param name="accelerometer_sensor">head_imu_accelerometer</param>
+      <param name="quaternion_sensor">head_imu_quaternion</param>
+      <param name="sensor_type">imu</param>
+    </sensor>
+  </ros2_control>
+  <link name="l_arm1_shoulder_p_link">
+    <visual name="l_arm1_shoulder_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm1_shoulder_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm1_shoulder_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm1_shoulder_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.008950692823963513 -0.007910244340673698 0.001047817615140858" />
+      <mass value="2.347873199255413" />
+      <inertia ixx="0.00371805577636075" ixy="-0.00020375534708451775" ixz="3.609106173368525e-05" iyy="0.004459283172641818" iyz="5.624647211110556e-05" izz="0.004925669991342847" />
+    </inertial>
+  </link>
+  <joint name="l_arm1_shoulder_p_joint" type="revolute">
+    <parent link="trunk_link" />
+    <child link="l_arm1_shoulder_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.225 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="107.0" lower="-3.141592653589793" upper="1.0000736613927508" velocity="3.9" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-3.0892327760299634" soft_upper_limit="0.9477137838329208" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm2_shoulder_r_link">
+    <visual name="l_arm2_shoulder_r_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm2_shoulder_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm2_shoulder_r_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm2_shoulder_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.00036305191629661246 0.011843042908443239 -0.03652190992211854" />
+      <mass value="0.752587840927864" />
+      <inertia ixx="0.0026036114569122793" ixy="8.592053527867745e-06" ixz="1.6856075010420394e-05" iyy="0.0024594847856526784" iyz="0.0002802648051565737" izz="0.0016631005538151674" />
+    </inertial>
+  </link>
+  <joint name="l_arm2_shoulder_r_joint" type="revolute">
+    <parent link="l_arm1_shoulder_p_link" />
+    <child link="l_arm2_shoulder_r_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="1 0 0" />
+    <limit effort="107.0" lower="-0.5235987755982988" upper="1.5707963267948966" velocity="3.9" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-0.47123889803846897" soft_upper_limit="1.5184364492350666" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm3_shoulder_y_link">
+    <visual name="l_arm3_shoulder_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm3_shoulder_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm3_shoulder_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm3_shoulder_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.009483721082429376 0.0009283823410288751 0.07220283077817466" />
+      <mass value="2.8032226973946757" />
+      <inertia ixx="0.01709273409680172" ixy="-3.1041493444281146e-05" ixz="0.0018537887840343332" iyy="0.017612642148909542" iyz="0.00017830759281331393" izz="0.003132408910489035" />
+    </inertial>
+  </link>
+  <joint name="l_arm3_shoulder_y_joint" type="revolute">
+    <parent link="l_arm2_shoulder_r_link" />
+    <child link="l_arm3_shoulder_y_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0275 -0.28" />
+    <axis xyz="0 0 1" />
+    <limit effort="70.0" lower="-3.139847324337799" upper="3.139847324337799" velocity="3.8" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-3.087487446777969" soft_upper_limit="3.087487446777969" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm4_elbow_p_link">
+    <visual name="l_arm4_elbow_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm4_elbow_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm4_elbow_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm4_elbow_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.016878859016134812 -0.002424599482891291 -0.08347296858171128" />
+      <mass value="1.4951436605879314" />
+      <inertia ixx="0.004293550118219109" ixy="4.3192250569185595e-05" ixz="-0.0003401699176851234" iyy="0.004009022454595748" iyz="0.00022976670691615358" izz="0.0019433761729977456" />
+    </inertial>
+  </link>
+  <joint name="l_arm4_elbow_p_joint" type="revolute">
+    <parent link="l_arm3_shoulder_y_link" />
+    <child link="l_arm4_elbow_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.02 0.0 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="70.0" lower="-2.6162485487394997" upper="0.05235987755982988" velocity="3.8" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-2.5638886711796705" soft_upper_limit="0.0" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm5_wrist_y_link">
+    <visual name="l_arm5_wrist_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm5_wrist_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm5_wrist_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm5_wrist_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="1.0105403425632446e-05 -0.0007920766777345156 0.033467755020747975" />
+      <mass value="0.27226645693469925" />
+      <inertia ixx="0.00042677981237483024" ixy="1.5635914930696041e-07" ixz="-8.511440415016232e-08" iyy="0.00029281147887157377" iyz="-2.9845719981923703e-05" izz="0.0003716353641820523" />
+    </inertial>
+  </link>
+  <joint name="l_arm5_wrist_y_joint" type="revolute">
+    <parent link="l_arm4_elbow_p_link" />
+    <child link="l_arm5_wrist_y_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.0 -0.213" />
+    <axis xyz="0 0 1" />
+    <limit effort="36.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="4.3" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-3.0892327760299634" soft_upper_limit="3.0892327760299634" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm6_wrist_p_link">
+    <visual name="l_arm6_wrist_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm6_wrist_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm6_wrist_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm6_wrist_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.0023977486620611805 0.0032941533904827926 -0.02747107099422101" />
+      <mass value="0.8769025437478114" />
+      <inertia ixx="0.0011344037552627772" ixy="-5.74262388435353e-06" ixz="-5.7053004228770495e-05" iyy="0.0011212906698454524" iyz="-8.099881421779838e-05" izz="0.0005394058553208015" />
+    </inertial>
+  </link>
+  <joint name="l_arm6_wrist_p_joint" type="revolute">
+    <parent link="l_arm5_wrist_y_link" />
+    <child link="l_arm6_wrist_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="15.0" lower="-1.3962634015954636" upper="1.3962634015954636" velocity="7.7" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.3439035240356338" soft_upper_limit="1.3439035240356338" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm7_wrist_r_link">
+    <visual name="l_arm7_wrist_r_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm7_wrist_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm7_wrist_r_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm7_wrist_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.005628948451189553 -0.0002631286864539303 -0.13713379318786653" />
+      <mass value="1.1182834022922525" />
+      <inertia ixx="0.00054013059" ixy="-3.4201381e-06" ixz="1.2981479e-05" iyy="0.00040641427" iyz="-1.619246e-05" izz="0.0002867356" />
+    </inertial>
+  </link>
+  <joint name="l_arm7_wrist_r_joint" type="revolute">
+    <parent link="l_arm6_wrist_p_link" />
+    <child link="l_arm7_wrist_r_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.055" />
+    <axis xyz="1 0 0" />
+    <limit effort="15.0" lower="-1.3962634015954636" upper="1.3962634015954636" velocity="7.7" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.3439035240356338" soft_upper_limit="1.3439035240356338" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="l_arm_force_sensor_link">
+    <visual name="l_arm_force_sensor_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/l_arm_force_sensor_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_arm_force_sensor_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/l_arm_force_sensor_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-3.6099554e-06 0.00010782379 -0.01796209" />
+      <mass value="0.18791729" />
+      <inertia ixx="6.7718362e-05" ixy="-8.1094726e-09" ixz="-1.4043436e-08" iyy="6.769248e-05" iyz="-8.3150825e-08" izz="9.1033288e-05" />
+    </inertial>
+  </link>
+  <joint name="l_arm_force_sensor_fixed_joint" type="fixed">
+    <parent link="l_arm7_wrist_r_link" />
+    <child link="l_arm_force_sensor_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.06" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <sensor id="l_arm_force_torque" name="l_arm_fts" type="force_torque" update_rate="100.0">
+    <parent link="l_arm_force_sensor_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <force_torque frame="l_arm_force_torque" measure_direction="force torque sensor" />
+  </sensor>
+  <link name="l_end_effector_frame" />
+  <joint name="l_end_effector_fixed_joint" type="fixed">
+    <parent link="l_arm_force_sensor_link" />
+    <child link="l_end_effector_frame" />
+    <origin rpy="0 1.5707963 0" xyz="0 0 -0.1784999" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <ros2_control name="l_arm_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="l_arm1_shoulder_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm1_shoulder_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm1_shoulder_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm1_shoulder_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_arm2_shoulder_r_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm2_shoulder_r_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm2_shoulder_r_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm2_shoulder_r_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_arm3_shoulder_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm3_shoulder_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm3_shoulder_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm3_shoulder_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_arm4_elbow_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm4_elbow_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm4_elbow_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm4_elbow_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_arm5_wrist_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm5_wrist_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm5_wrist_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm5_wrist_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_arm6_wrist_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm6_wrist_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm6_wrist_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm6_wrist_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_arm7_wrist_r_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_arm7_wrist_r_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_arm7_wrist_r_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_arm7_wrist_r_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <sensor name="l_arm_fts">
+      <state_interface name="force.x" />
+      <state_interface name="force.y" />
+      <state_interface name="force.z" />
+      <state_interface name="torque.x" />
+      <state_interface name="torque.y" />
+      <state_interface name="torque.z" />
+      <param name="frame_id">l_arm_force_sensor_link</param>
+      <param name="fx_range">100</param>
+      <param name="fy_range">100</param>
+      <param name="fz_range">100</param>
+      <param name="tx_range">15</param>
+      <param name="ty_range">15</param>
+      <param name="tz_range">15</param>
+      <param name="force_sensor">l_arm_fts_force</param>
+      <param name="torque_sensor">l_arm_fts_torque</param>
+      <param name="sensor_type">force_torque</param>
+    </sensor>
+  </ros2_control>
+  <link name="r_arm1_shoulder_p_link">
+    <visual name="r_arm1_shoulder_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm1_shoulder_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm1_shoulder_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm1_shoulder_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.008950692823963513 0.007910244340673698 0.001047817615140858" />
+      <mass value="2.347873199255413" />
+      <inertia ixx="0.00371805577636075" ixy="0.00020375534708451775" ixz="3.609106173368525e-05" iyy="0.004459283172641818" iyz="-5.624647211110556e-05" izz="0.004925669991342847" />
+    </inertial>
+  </link>
+  <joint name="r_arm1_shoulder_p_joint" type="revolute">
+    <parent link="trunk_link" />
+    <child link="r_arm1_shoulder_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.225 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="107.0" lower="-3.141592653589793" upper="1.0000736613927508" velocity="3.9" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-3.0892327760299634" soft_upper_limit="0.9477137838329208" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm2_shoulder_r_link">
+    <visual name="r_arm2_shoulder_r_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm2_shoulder_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm2_shoulder_r_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm2_shoulder_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.00036305191629661246 -0.011843042908443239 -0.03652190992211854" />
+      <mass value="0.752587840927864" />
+      <inertia ixx="0.0026036114569122793" ixy="-8.592053527867745e-06" ixz="1.6856075010420394e-05" iyy="0.0024594847856526784" iyz="-0.0002802648051565737" izz="0.0016631005538151674" />
+    </inertial>
+  </link>
+  <joint name="r_arm2_shoulder_r_joint" type="revolute">
+    <parent link="r_arm1_shoulder_p_link" />
+    <child link="r_arm2_shoulder_r_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="1 0 0" />
+    <limit effort="107.0" lower="-1.5707963267948966" upper="0.5235987755982988" velocity="3.9" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.5184364492350666" soft_upper_limit="0.47123889803846897" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm3_shoulder_y_link">
+    <visual name="r_arm3_shoulder_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm3_shoulder_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm3_shoulder_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm3_shoulder_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.009483721082429376 -0.0009283823410288751 0.07220283077817466" />
+      <mass value="2.8032226973946757" />
+      <inertia ixx="0.01709273409680172" ixy="3.1041493444281146e-05" ixz="0.0018537887840343332" iyy="0.017612642148909542" iyz="-0.00017830759281331393" izz="0.003132408910489035" />
+    </inertial>
+  </link>
+  <joint name="r_arm3_shoulder_y_joint" type="revolute">
+    <parent link="r_arm2_shoulder_r_link" />
+    <child link="r_arm3_shoulder_y_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.0275 -0.28" />
+    <axis xyz="0 0 1" />
+    <limit effort="70.0" lower="-3.139847324337799" upper="3.139847324337799" velocity="3.8" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-3.087487446777969" soft_upper_limit="3.087487446777969" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm4_elbow_p_link">
+    <visual name="r_arm4_elbow_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm4_elbow_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm4_elbow_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm4_elbow_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.016878859016134812 0.002424599482891291 -0.08347296858171128" />
+      <mass value="1.4951436605879314" />
+      <inertia ixx="0.004293550118219109" ixy="-4.3192250569185595e-05" ixz="-0.0003401699176851234" iyy="0.004009022454595748" iyz="-0.00022976670691615358" izz="0.0019433761729977456" />
+    </inertial>
+  </link>
+  <joint name="r_arm4_elbow_p_joint" type="revolute">
+    <parent link="r_arm3_shoulder_y_link" />
+    <child link="r_arm4_elbow_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.02 0.0 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="70.0" lower="-2.6162485487394997" upper="0.05235987755982988" velocity="3.8" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-2.5638886711796705" soft_upper_limit="0.0" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm5_wrist_y_link">
+    <visual name="r_arm5_wrist_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm5_wrist_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm5_wrist_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm5_wrist_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="1.0105403425632446e-05 0.0007920766777345156 0.033467755020747975" />
+      <mass value="0.27226645693469925" />
+      <inertia ixx="0.00042677981237483024" ixy="-1.5635914930696041e-07" ixz="-8.511440415016232e-08" iyy="0.00029281147887157377" iyz="2.9845719981923703e-05" izz="0.0003716353641820523" />
+    </inertial>
+  </link>
+  <joint name="r_arm5_wrist_y_joint" type="revolute">
+    <parent link="r_arm4_elbow_p_link" />
+    <child link="r_arm5_wrist_y_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.0 -0.213" />
+    <axis xyz="0 0 1" />
+    <limit effort="36.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="4.3" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-3.0892327760299634" soft_upper_limit="3.0892327760299634" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm6_wrist_p_link">
+    <visual name="r_arm6_wrist_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm6_wrist_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm6_wrist_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm6_wrist_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.0023977486620611805 -0.0032941533904827926 -0.02747107099422101" />
+      <mass value="0.8769025437478114" />
+      <inertia ixx="0.0011344037552627772" ixy="5.74262388435353e-06" ixz="-5.7053004228770495e-05" iyy="0.0011212906698454524" iyz="8.099881421779838e-05" izz="0.0005394058553208015" />
+    </inertial>
+  </link>
+  <joint name="r_arm6_wrist_p_joint" type="revolute">
+    <parent link="r_arm5_wrist_y_link" />
+    <child link="r_arm6_wrist_p_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 1 0" />
+    <limit effort="15.0" lower="-1.3962634015954636" upper="1.3962634015954636" velocity="7.7" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.3439035240356338" soft_upper_limit="1.3439035240356338" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm7_wrist_r_link">
+    <visual name="r_arm7_wrist_r_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm7_wrist_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm7_wrist_r_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm7_wrist_r_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.005628948451189553 0.0002631286864539303 -0.13713379318786653" />
+      <mass value="1.1182834022922525" />
+      <inertia ixx="0.00054013059" ixy="3.4201381e-06" ixz="1.2981479e-05" iyy="0.00040641427" iyz="1.619246e-05" izz="0.0002867356" />
+    </inertial>
+  </link>
+  <joint name="r_arm7_wrist_r_joint" type="revolute">
+    <parent link="r_arm6_wrist_p_link" />
+    <child link="r_arm7_wrist_r_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.055" />
+    <axis xyz="1 0 0" />
+    <limit effort="15.0" lower="-1.3962634015954636" upper="1.3962634015954636" velocity="7.7" />
+    <safety_controller k_position="121.0" k_velocity="540.0" soft_lower_limit="-1.3439035240356338" soft_upper_limit="1.3439035240356338" />
+    <dynamics damping="3.48" friction="1.65" />
+  </joint>
+  <link name="r_arm_force_sensor_link">
+    <visual name="r_arm_force_sensor_link_vis">
+      <geometry>
+        <mesh filename="../meshes/M92UW/visual/r_arm_force_sensor_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_arm_force_sensor_link_col">
+      <geometry>
+        <mesh filename="../meshes/M92UW/collision/r_arm_force_sensor_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-3.6099554e-06 -0.00010782379 -0.01796209" />
+      <mass value="0.18791729" />
+      <inertia ixx="6.7718362e-05" ixy="8.1094726e-09" ixz="-1.4043436e-08" iyy="6.769248e-05" iyz="8.3150825e-08" izz="9.1033288e-05" />
+    </inertial>
+  </link>
+  <joint name="r_arm_force_sensor_fixed_joint" type="fixed">
+    <parent link="r_arm7_wrist_r_link" />
+    <child link="r_arm_force_sensor_link" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.06" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <sensor id="r_arm_force_torque" name="r_arm_fts" type="force_torque" update_rate="100.0">
+    <parent link="r_arm_force_sensor_link" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <force_torque frame="r_arm_force_torque" measure_direction="force torque sensor" />
+  </sensor>
+  <link name="r_end_effector_frame" />
+  <joint name="r_end_effector_fixed_joint" type="fixed">
+    <parent link="r_arm_force_sensor_link" />
+    <child link="r_end_effector_frame" />
+    <origin rpy="0 1.5707963 0" xyz="0 0 -0.1784999" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <ros2_control name="r_arm_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="r_arm1_shoulder_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm1_shoulder_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm1_shoulder_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm1_shoulder_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_arm2_shoulder_r_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm2_shoulder_r_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm2_shoulder_r_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm2_shoulder_r_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_arm3_shoulder_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm3_shoulder_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm3_shoulder_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm3_shoulder_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_arm4_elbow_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm4_elbow_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm4_elbow_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm4_elbow_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_arm5_wrist_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm5_wrist_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm5_wrist_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm5_wrist_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_arm6_wrist_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm6_wrist_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm6_wrist_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm6_wrist_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_arm7_wrist_r_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_arm7_wrist_r_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_arm7_wrist_r_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_arm7_wrist_r_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <sensor name="r_arm_fts">
+      <state_interface name="force.x" />
+      <state_interface name="force.y" />
+      <state_interface name="force.z" />
+      <state_interface name="torque.x" />
+      <state_interface name="torque.y" />
+      <state_interface name="torque.z" />
+      <param name="frame_id">r_arm_force_sensor_link</param>
+      <param name="fx_range">100</param>
+      <param name="fy_range">100</param>
+      <param name="fz_range">100</param>
+      <param name="tx_range">15</param>
+      <param name="ty_range">15</param>
+      <param name="tz_range">15</param>
+      <param name="force_sensor">r_arm_fts_force</param>
+      <param name="torque_sensor">r_arm_fts_torque</param>
+      <param name="sensor_type">force_torque</param>
+    </sensor>
+  </ros2_control>
+  <link name="l_hand_palm_link">
+    <visual name="l_hand_palm_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_hand_palm_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_hand_palm_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_hand_palm_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0066907677 -0.0010477583 0.073269258" />
+      <mass value="0.51091924" />
+      <inertia ixx="0.0011738638" ixy="8.0758228e-06" ixz="-5.8385213e-05" iyy="0.00086809954" iyz="-2.9339983e-06" izz="0.00046867916" />
+    </inertial>
+  </link>
+  <joint name="l_hand_palm_fixed_joint" type="fixed">
+    <parent link="l_arm_force_sensor_link" />
+    <child link="l_hand_palm_link" />
+    <origin rpy="3.1415926 0.0 1.5707963" xyz="0.0 0.0 -0.0402" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_wrist_camera_link">
+    <visual name="l_wrist_camera_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_wrist_camera_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_wrist_camera_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_wrist_camera_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01152421 0.00937785 -0.01181410" />
+      <mass value="0.61953384" />
+      <inertia ixx="3.83349585E-04" ixy="1.12480369E-06" ixz="2.03440097E-05" iyy="2.15177104E-04" iyz="6.38698840E-05" izz="4.88019387E-04" />
+    </inertial>
+  </link>
+  <joint name="l_wrist_camera_joint" type="fixed">
+    <parent link="l_hand_palm_link" />
+    <child link="l_wrist_camera_link" />
+    <origin rpy="0.08726646111111111 -0.5235987666666666 -0.7360053155578189" xyz="-0.049594655354 -0.026873967748 0.008037088402" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_wrist_camera1_color_optical_frame" />
+  <joint name="l_wrist_camera1_color_optical_joint" type="fixed">
+    <parent link="l_wrist_camera_link" />
+    <child link="l_wrist_camera1_color_optical_frame" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_wrist_camera1_color_frame" />
+  <joint name="l_wrist_camera1_color_joint" type="fixed">
+    <parent link="l_wrist_camera1_color_optical_frame" />
+    <child link="l_wrist_camera1_color_frame" />
+    <origin rpy="0.0 -1.5707963 1.5707963" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_wrist_camera2_color_optical_frame" />
+  <joint name="l_wrist_camera2_color_optical_joint" type="fixed">
+    <parent link="l_wrist_camera_link" />
+    <child link="l_wrist_camera2_color_optical_frame" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.02 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_wrist_camera2_color_frame" />
+  <joint name="l_wrist_camera2_color_joint" type="fixed">
+    <parent link="l_wrist_camera2_color_optical_frame" />
+    <child link="l_wrist_camera2_color_frame" />
+    <origin rpy="0.0 -1.5707963 1.5707963" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_thumb_cmc_y_link">
+    <visual name="l_thumb_cmc_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_thumb_cmc_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_thumb_cmc_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_thumb_cmc_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.00013690974 0.004314019 0.0014461036" />
+      <mass value="0.0041682968" />
+      <inertia ixx="1.879066e-07" ixy="2.6648846e-10" ixz="1.9123148e-09" iyy="1.4733887e-07" iyz="-1.0252068e-08" izz="1.6145797e-07" />
+    </inertial>
+  </link>
+  <joint name="l_thumb_cmc_y_joint" type="revolute">
+    <parent link="l_hand_palm_link" />
+    <child link="l_thumb_cmc_y_link" />
+    <origin rpy="6.98131688888889e-09 4.188790133333333e-08 0.17452838436624443" xyz="-0.01285999 0.030499 0.0422" />
+    <axis xyz="0 0 1" />
+    <limit effort="10.0" lower="0.0" upper="1.5707963267948966" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="l_thumb_cmc_p_link">
+    <visual name="l_thumb_cmc_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_thumb_cmc_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_thumb_cmc_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_thumb_cmc_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0037406309 6.2541125e-05 0.030701447" />
+      <mass value="0.065849672" />
+      <inertia ixx="2.342561e-05" ixy="1.0513129e-08" ixz="-1.2619558e-06" iyy="2.3436847e-05" iyz="-6.1471225e-09" izz="6.0738673e-06" />
+    </inertial>
+  </link>
+  <joint name="l_thumb_cmc_p_joint" type="revolute">
+    <parent link="l_thumb_cmc_y_link" />
+    <child link="l_thumb_cmc_p_link" />
+    <origin rpy="6.98131688888889e-09 1.0556553987442223 1.5707963" xyz="0.0 0.010222 -0.001249999" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-0.9581857593448869" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="l_thumb_mcp_link">
+    <visual name="l_thumb_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_thumb_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_thumb_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_thumb_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0041049624 0.00012475893 0.0068045785" />
+      <mass value="0.020626252" />
+      <inertia ixx="2.7725592e-06" ixy="3.2525504e-09" ixz="1.0813275e-07" iyy="2.4303458e-06" iyz="-1.4560537e-09" izz="1.844533e-06" />
+    </inertial>
+  </link>
+  <joint name="l_thumb_mcp_joint" type="revolute">
+    <parent link="l_thumb_cmc_p_link" />
+    <child link="l_thumb_mcp_link" />
+    <origin rpy="0.0 0.1292803752142889 0.0" xyz="0.0 0.0 0.061208" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.2044394994965228" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="l_thumb_cmc_p_joint" multiplier="1.257" offset="0" />
+  </joint>
+  <link name="l_thumb_ip_link">
+    <visual name="l_thumb_ip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_thumb_ip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_thumb_ip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_thumb_ip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0023012779 5.1945218e-05 0.01155386" />
+      <mass value="0.014682022" />
+      <inertia ixx="1.7598268e-06" ixy="2.1216882e-10" ixz="1.7453019e-07" iyy="1.6243072e-06" iyz="5.4318299e-09" izz="5.5154865e-07" />
+    </inertial>
+  </link>
+  <joint name="l_thumb_ip_joint" type="revolute">
+    <parent link="l_thumb_mcp_link" />
+    <child link="l_thumb_ip_link" />
+    <origin rpy="0.0 0.030171506264555555 0.0" xyz="0.0 0.0 0.021998" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-0.9668094311789909" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="l_thumb_cmc_p_joint" multiplier="1.009" offset="0" />
+  </joint>
+  <link name="l_index_mcp_link">
+    <visual name="l_index_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_index_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_index_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_index_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0025630348 -4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="1.8656552e-07" iyy="7.7945937e-06" iyz="9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="l_index_mcp_joint" type="revolute">
+    <parent link="l_hand_palm_link" />
+    <child link="l_index_mcp_link" />
+    <origin rpy="-0.05341929150455556 -0.1994370248941111 0.010576695086666667" xyz="0.0098 0.03651 0.1371306" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.509709802975095" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="l_index_pip_link">
+    <visual name="l_index_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_index_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_index_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_index_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="l_index_pip_joint" type="revolute">
+    <parent link="l_index_mcp_link" />
+    <child link="l_index_pip_link" />
+    <origin rpy="0.0 -0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.486308428364355" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="l_index_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <link name="l_middle_mcp_link">
+    <visual name="l_middle_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_middle_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_middle_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_middle_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0025630348 -4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="1.8656552e-07" iyy="7.7945937e-06" iyz="9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="l_middle_mcp_joint" type="revolute">
+    <parent link="l_hand_palm_link" />
+    <child link="l_middle_mcp_link" />
+    <origin rpy="0.0 -0.19971453224044444 0.0" xyz="0.0098 0.0110499 0.1382999" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.509709802975095" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="l_middle_pip_link">
+    <visual name="l_middle_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_middle_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_middle_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_middle_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="l_middle_pip_joint" type="revolute">
+    <parent link="l_middle_mcp_link" />
+    <child link="l_middle_pip_link" />
+    <origin rpy="0.0 -0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.486308428364355" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="l_middle_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <link name="l_ring_mcp_link">
+    <visual name="l_ring_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_ring_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_ring_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_ring_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0025630348 -4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="1.8656552e-07" iyy="7.7945937e-06" iyz="9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="l_ring_mcp_joint" type="revolute">
+    <parent link="l_hand_palm_link" />
+    <child link="l_ring_mcp_link" />
+    <origin rpy="0.05341927405126334 -0.1994370248941111 -0.010592403049666667" xyz="0.0098 -0.01446388 0.13813451" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.509709802975095" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="l_ring_pip_link">
+    <visual name="l_ring_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_ring_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_ring_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_ring_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="l_ring_pip_joint" type="revolute">
+    <parent link="l_ring_mcp_link" />
+    <child link="l_ring_pip_link" />
+    <origin rpy="0.0 -0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.486308428364355" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="l_ring_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <link name="l_pinky_mcp_link">
+    <visual name="l_pinky_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_pinky_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_pinky_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_pinky_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0025630348 -4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="1.8656552e-07" iyy="7.7945937e-06" iyz="9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="l_pinky_mcp_joint" type="revolute">
+    <parent link="l_hand_palm_link" />
+    <child link="l_pinky_mcp_link" />
+    <origin rpy="0.1068141484 -0.19860101219666665 -0.021153390173333335" xyz="0.0098 -0.0398034 0.13514012" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.509709802975095" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="l_pinky_pip_link">
+    <visual name="l_pinky_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/l_pinky_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="l_pinky_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/l_pinky_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="l_pinky_pip_joint" type="revolute">
+    <parent link="l_pinky_mcp_link" />
+    <child link="l_pinky_pip_link" />
+    <origin rpy="0.0 -0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.486308428364355" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="l_pinky_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <ros2_control name="l_hand_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="l_thumb_cmc_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_thumb_cmc_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_thumb_cmc_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_thumb_cmc_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_thumb_cmc_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_thumb_cmc_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_thumb_cmc_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_thumb_cmc_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_thumb_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">l_thumb_cmc_p_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="l_thumb_ip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">l_thumb_cmc_p_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="l_index_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_index_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_index_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_index_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_index_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">l_index_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="l_middle_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_middle_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_middle_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_middle_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_middle_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">l_middle_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="l_pinky_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_pinky_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_pinky_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_pinky_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_pinky_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">l_pinky_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="l_ring_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="l_ring_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="l_ring_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="l_ring_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="l_ring_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">l_ring_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+  </ros2_control>
+  <link name="r_hand_palm_link">
+    <visual name="r_hand_palm_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_hand_palm_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_hand_palm_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_hand_palm_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.0066907677 -0.0010477583 0.073269258" />
+      <mass value="0.51091924" />
+      <inertia ixx="0.0011738638" ixy="-8.0758228e-06" ixz="5.8385213e-05" iyy="0.00086809954" iyz="-2.9339983e-06" izz="0.00046867916" />
+    </inertial>
+  </link>
+  <joint name="r_hand_palm_fixed_joint" type="fixed">
+    <parent link="r_arm_force_sensor_link" />
+    <child link="r_hand_palm_link" />
+    <origin rpy="3.1415926 0.0 1.5707963" xyz="0.0 0.0 -0.0402" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_wrist_camera_link">
+    <visual name="r_wrist_camera_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_wrist_camera_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_wrist_camera_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_wrist_camera_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00885724 0.00788184 -0.01148469" />
+      <mass value="0.61953384" />
+      <inertia ixx="3.30124420E-04" ixy="-3.72996898E-06" ixz="-1.66951003E-05" iyy="2.11803988E-04" iyz="5.40120697E-05" izz="4.36892784E-04" />
+    </inertial>
+  </link>
+  <joint name="r_wrist_camera_joint" type="fixed">
+    <parent link="r_hand_palm_link" />
+    <child link="r_wrist_camera_link" />
+    <origin rpy="0.08726646111111111 0.5235987666666666 0.7360053155578189" xyz="0.047553539948 -0.02872279145 0.009627090055" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_wrist_camera1_color_optical_frame" />
+  <joint name="r_wrist_camera1_color_optical_joint" type="fixed">
+    <parent link="r_wrist_camera_link" />
+    <child link="r_wrist_camera1_color_optical_frame" />
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_wrist_camera1_color_frame" />
+  <joint name="r_wrist_camera1_color_joint" type="fixed">
+    <parent link="r_wrist_camera1_color_optical_frame" />
+    <child link="r_wrist_camera1_color_frame" />
+    <origin rpy="0.0 -1.5707963 1.5707963" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_wrist_camera2_color_optical_frame" />
+  <joint name="r_wrist_camera2_color_optical_joint" type="fixed">
+    <parent link="r_wrist_camera_link" />
+    <child link="r_wrist_camera2_color_optical_frame" />
+    <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_wrist_camera2_color_frame" />
+  <joint name="r_wrist_camera2_color_joint" type="fixed">
+    <parent link="r_wrist_camera2_color_optical_frame" />
+    <child link="r_wrist_camera2_color_frame" />
+    <origin rpy="0.0 -1.5707963 1.5707963" xyz="0.0 0.0 0.0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_thumb_cmc_y_link">
+    <visual name="r_thumb_cmc_y_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_thumb_cmc_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_thumb_cmc_y_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_thumb_cmc_y_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.00013690974 0.004314019 0.0014461036" />
+      <mass value="0.0041682968" />
+      <inertia ixx="1.879066e-07" ixy="-2.6648846e-10" ixz="-1.9123148e-09" iyy="1.4733887e-07" iyz="-1.0252068e-08" izz="1.6145797e-07" />
+    </inertial>
+  </link>
+  <joint name="r_thumb_cmc_y_joint" type="revolute">
+    <parent link="r_hand_palm_link" />
+    <child link="r_thumb_cmc_y_link" />
+    <origin rpy="6.98131688888889e-09 -4.188790133333333e-08 -0.17452838436624443" xyz="0.01285999 0.030499 0.0422" />
+    <axis xyz="0 0 1" />
+    <limit effort="10.0" lower="-1.5707963267948966" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="r_thumb_cmc_p_link">
+    <visual name="r_thumb_cmc_p_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_thumb_cmc_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_thumb_cmc_p_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_thumb_cmc_p_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0037406309 6.2541125e-05 0.030701447" />
+      <mass value="0.065849672" />
+      <inertia ixx="2.342561e-05" ixy="1.0513129e-08" ixz="-1.2619558e-06" iyy="2.3436847e-05" iyz="-6.1471225e-09" izz="6.0738673e-06" />
+    </inertial>
+  </link>
+  <joint name="r_thumb_cmc_p_joint" type="revolute">
+    <parent link="r_thumb_cmc_y_link" />
+    <child link="r_thumb_cmc_p_link" />
+    <origin rpy="6.98131688888889e-09 1.0556553987442223 1.5707963" xyz="0.0 0.010222 -0.001249999" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-0.9581857593448869" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="r_thumb_mcp_link">
+    <visual name="r_thumb_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_thumb_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_thumb_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_thumb_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0041049624 0.00012475893 0.0068045785" />
+      <mass value="0.020626252" />
+      <inertia ixx="2.7725592e-06" ixy="3.2525504e-09" ixz="1.0813275e-07" iyy="2.4303458e-06" iyz="-1.4560537e-09" izz="1.844533e-06" />
+    </inertial>
+  </link>
+  <joint name="r_thumb_mcp_joint" type="revolute">
+    <parent link="r_thumb_cmc_p_link" />
+    <child link="r_thumb_mcp_link" />
+    <origin rpy="0.0 0.1292803752142889 0.0" xyz="0.0 0.0 0.061208" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-1.2044394994965228" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="r_thumb_cmc_p_joint" multiplier="1.257" offset="0" />
+  </joint>
+  <link name="r_thumb_ip_link">
+    <visual name="r_thumb_ip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_thumb_ip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_thumb_ip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_thumb_ip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0023012779 5.1945218e-05 0.01155386" />
+      <mass value="0.014682022" />
+      <inertia ixx="1.7598268e-06" ixy="2.1216882e-10" ixz="1.7453019e-07" iyy="1.6243072e-06" iyz="5.4318299e-09" izz="5.5154865e-07" />
+    </inertial>
+  </link>
+  <joint name="r_thumb_ip_joint" type="revolute">
+    <parent link="r_thumb_mcp_link" />
+    <child link="r_thumb_ip_link" />
+    <origin rpy="0.0 0.030171506264555555 0.0" xyz="0.0 0.0 0.021998" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="-0.9668094311789909" upper="0.0" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="r_thumb_cmc_p_joint" multiplier="1.009" offset="0" />
+  </joint>
+  <link name="r_index_mcp_link">
+    <visual name="r_index_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_index_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_index_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_index_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0025630348 4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="-1.8656552e-07" iyy="7.7945937e-06" iyz="-9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="r_index_mcp_joint" type="revolute">
+    <parent link="r_hand_palm_link" />
+    <child link="r_index_mcp_link" />
+    <origin rpy="-0.05341929150455556 0.1994370248941111 -0.010576695086666667" xyz="-0.0098 0.03651 0.1371306" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.509709802975095" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="r_index_pip_link">
+    <visual name="r_index_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_index_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_index_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_index_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="r_index_pip_joint" type="revolute">
+    <parent link="r_index_mcp_link" />
+    <child link="r_index_pip_link" />
+    <origin rpy="0.0 0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.486308428364355" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="r_index_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <link name="r_middle_mcp_link">
+    <visual name="r_middle_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_middle_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_middle_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_middle_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0025630348 4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="-1.8656552e-07" iyy="7.7945937e-06" iyz="-9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="r_middle_mcp_joint" type="revolute">
+    <parent link="r_hand_palm_link" />
+    <child link="r_middle_mcp_link" />
+    <origin rpy="0.0 0.19971453224044444 0.0" xyz="-0.0098 0.0110499 0.1382999" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.509709802975095" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="r_middle_pip_link">
+    <visual name="r_middle_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_middle_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_middle_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_middle_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="r_middle_pip_joint" type="revolute">
+    <parent link="r_middle_mcp_link" />
+    <child link="r_middle_pip_link" />
+    <origin rpy="0.0 0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.486308428364355" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="r_middle_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <link name="r_ring_mcp_link">
+    <visual name="r_ring_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_ring_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_ring_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_ring_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0025630348 4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="-1.8656552e-07" iyy="7.7945937e-06" iyz="-9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="r_ring_mcp_joint" type="revolute">
+    <parent link="r_hand_palm_link" />
+    <child link="r_ring_mcp_link" />
+    <origin rpy="0.05341927405126334 0.1994370248941111 0.010592403049666667" xyz="-0.0098 -0.01446388 0.13813451" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.509709802975095" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="r_ring_pip_link">
+    <visual name="r_ring_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_ring_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_ring_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_ring_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="r_ring_pip_joint" type="revolute">
+    <parent link="r_ring_mcp_link" />
+    <child link="r_ring_pip_link" />
+    <origin rpy="0.0 0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.486308428364355" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="r_ring_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <link name="r_pinky_mcp_link">
+    <visual name="r_pinky_mcp_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_pinky_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_pinky_mcp_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_pinky_mcp_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0025630348 4.5144155e-05 0.015835538" />
+      <mass value="0.019819477" />
+      <inertia ixx="7.968542e-06" ixy="-2.0287697e-09" ixz="-1.8656552e-07" iyy="7.7945937e-06" iyz="-9.2239096e-09" izz="1.3645148e-06" />
+    </inertial>
+  </link>
+  <joint name="r_pinky_mcp_joint" type="revolute">
+    <parent link="r_hand_palm_link" />
+    <child link="r_pinky_mcp_link" />
+    <origin rpy="0.1068141484 0.19860101219666665 0.021153390173333335" xyz="-0.0098 -0.0398034 0.13514012" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.509709802975095" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+  </joint>
+  <link name="r_pinky_pip_link">
+    <visual name="r_pinky_pip_link_vis">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/visual/r_pinky_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+      <material name="metal">
+        <color rgba="0.85 0.85 0.85 1" />
+      </material>
+    </visual>
+    <collision name="r_pinky_pip_link_col">
+      <geometry>
+        <mesh filename="../meshes/robot_hands/m92u_hand/collision/r_pinky_pip_link.stl" scale="1e-3 1e-3 1e-3" />
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0034042799 4.7762295e-05 0.01800778" />
+      <mass value="0.014898956" />
+      <inertia ixx="4.0728035e-06" ixy="-4.5175385e-10" ixz="-1.3605185e-07" iyy="3.9952123e-06" iyz="7.1198886e-09" izz="5.2116681e-07" />
+    </inertial>
+  </link>
+  <joint name="r_pinky_pip_joint" type="revolute">
+    <parent link="r_pinky_mcp_link" />
+    <child link="r_pinky_pip_link" />
+    <origin rpy="0.0 0.05016320530757778 0.0" xyz="0.0 0.0 0.0310058" />
+    <axis xyz="0 1 0" />
+    <limit effort="10.0" lower="0.0" upper="1.486308428364355" velocity="1.0" />
+    <dynamics damping="0.05" friction="0.2" />
+    <mimic joint="r_pinky_mcp_joint" multiplier="0.9845" offset="0" />
+  </joint>
+  <ros2_control name="r_hand_system" type="system">
+    <hardware>
+      <plugin>fake_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="r_thumb_cmc_y_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_thumb_cmc_y_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_thumb_cmc_y_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_thumb_cmc_y_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_thumb_cmc_p_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_thumb_cmc_p_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_thumb_cmc_p_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_thumb_cmc_p_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_thumb_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">r_thumb_cmc_p_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="r_thumb_ip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">r_thumb_cmc_p_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="r_index_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_index_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_index_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_index_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_index_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">r_index_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="r_middle_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_middle_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_middle_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_middle_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_middle_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">r_middle_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="r_pinky_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_pinky_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_pinky_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_pinky_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_pinky_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">r_pinky_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="r_ring_mcp_joint">
+      <param name="initial_position">0.0</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <transmission name="r_ring_mcp_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+      <joint name="r_ring_mcp_joint" role="joint1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </joint>
+      <actuator name="r_ring_mcp_actuator" role="actuator1">
+        <mechanical_reduction>1.0</mechanical_reduction>
+        <offset>0</offset>
+      </actuator>
+    </transmission>
+    <joint name="r_ring_pip_joint">
+      <param name="initial_position">0.0</param>
+      <param name="mimic">r_ring_mcp_joint</param>
+      <param name="multiplier">1</param>
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+  </ros2_control>
+</robot>

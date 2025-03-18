@@ -1,0 +1,25 @@
+# 请求部分
+# 搜索空间各维度的范围，每个维度用两个浮点数表示最小和最大值
+float64[] x_dimensions
+# 障碍物信息，每个障碍物用六个浮点数表示其最小和最大坐标
+float64[] obstacles
+# 起始点坐标，用三个浮点数表示
+float64[3] x_init
+# 目标点坐标，用三个浮点数表示
+float64[3] x_goal
+# 树的边长度
+float64 q
+# 用于检查与障碍物相交的最小边长度
+float64 r
+# 最大采样数量
+int32 max_samples
+# 重连的分支数量
+int32 rewire_count
+# 检查与目标点连接的概率
+float64 prc
+
+---
+
+# 响应部分
+# 规划得到的路径，每个点用三个浮点数表示
+float64[] path
